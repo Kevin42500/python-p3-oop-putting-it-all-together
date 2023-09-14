@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from shoe import Shoe
+from lib.shoe import Shoe
 
 import io
 import sys
@@ -37,6 +37,20 @@ class TestShoe:
         stan_smith = Shoe("Adidas", 9)
         stan_smith.cobble()
         assert(stan_smith.condition == "New")
+
+    
+def test_shoe_wear_clean():
+    shoe = Shoe("Nike", 10, "Red")
+    assert shoe.wear() == True
+    assert shoe.wear() == False 
+    assert shoe.clean() == True
+    assert shoe.clean() == False 
+
+def test_shoe_attributes():
+    shoe = Shoe("Adidas", 9.5, "Blue")
+    assert shoe.brand == "Adidas"
+    assert shoe.size == 9.5
+    assert shoe.color == "Blue"    
         
         
    
